@@ -12,9 +12,41 @@ import scala.util.Try
 // Akka Actor Examples
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.scaladsl.LoggerOps
-import akka.actor.typed.{ ActorRef, ActorSystem, Behavior }
+import akka.actor.typed.{ ActorRef, Behavior }
+import akka.actor.{Actor,Props,ActorLogging,ActorSystem}
 
 
+case class CallConnect(id: Int , number : String)
+
+
+class Supervisor extends Actor with ActorLogging
+{
+  override def preStart():Unit = log.info("Application Start")
+  override  def postStop():Unit = log.info("Application Stopped")
+
+  var lastmsg: String = _
+
+  override def receive: Receive = {
+    case x: String  => {
+      println("I am inside Actor Raghav")
+      lastmsg = x
+    }
+  }
+}
+
+class Supervisor2 extends Actor with ActorLogging
+{
+   override  def preStart(): Unit = log.info("Application2 Started")
+   override  def postStop(): Unit = log.info("Application2 Stopped")
+
+    override  def receive: Receive = {
+      case x: CallConnect => {
+        println(s"Sending call to ${x} to flow control")
+      }
+
+    }
+
+}
 
 
 case class User(
@@ -141,6 +173,25 @@ for (i <- listbuf) {
 
 
 }
+
+  // Actor Examples is given here
+
+  val system = ActorSystem("my-first-actor")
+
+  val superer = system.actorOf(Props(new Supervisor),name= "my-superer")
+
+  superer ! "Hello"
+   system.terminate()
+
+
+  val system2 = ActorSystem("my-second-actor")
+
+  val superer2 = system2.actorOf(Props(new Supervisor2),name= "my-superer2")
+
+  superer2 ! CallConnect(123,"2345667")
+
+  system2.terminate()
+
 
 
 }
