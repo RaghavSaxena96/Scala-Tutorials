@@ -1,5 +1,7 @@
 # Scala-Tutorials
 
+
+
 Scala Docs for referencing
 
 Use Docs online on Scala website and Akka Website Lightbend Opensource
@@ -87,5 +89,25 @@ More
 
 ---------------------------------------------------------------------------
 
+# Defining Funcions in Scala
 
+def func (a: Int, b: Int ) : Int = {
+  a+b
+}
+
+def recur ( n : Int) : Int = {
+   if(n==1) 1 else n+recur(n-1)   
+}
+
+println(recur(3))
+
+---------------------------------------------------------------------------
+
+Output - 
+
+6
+
+---------------------------------------------------------------------------
+
+  
 
