@@ -31,9 +31,9 @@ var y :Int = 34
 y = 32  
 
 
-println(x)
-println(y)
-println(t)
+println(x) <br>
+println(y) <br>
+println(t) <br>
 
 -------------------------------------------------------------------------
 Output -
