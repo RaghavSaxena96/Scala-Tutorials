@@ -95,8 +95,8 @@ def func (a: Int, b: Int ) : Int = {
   a+b
 }
 
-def recur ( n : Int) : Int = {
-   if(n==1) 1 else n+recur(n-1)   
+def recur ( n : Int) : Int = { <br>
+   if(n==1) 1 else n+recur(n-1)   <br>
 }
 
 println(recur(3))
