@@ -114,7 +114,7 @@ Output -
 
 
 
-object Work extends App{
+object Work extends App{ <br>
   val p = new Person(22,"Raghav")
   
   p.greet()
