@@ -134,4 +134,4 @@ println(" Hi I am Raghav")
   
 # Scala does not have class level functionality ("static") 
 
-Scala do have object , objects do not receive parameter , scala object is a singleton instances and class and object have same name.
+Scala do have object , objects do not receive parameter , scala object is a singleton instances and class and object can have same name.
