@@ -110,4 +110,26 @@ Output -
 ---------------------------------------------------------------------------
 
   
+# Object Oriented Programming in Scala
+
+
+
+object Work extends App{
+  val p = new Person(22,"Raghav")
+  
+  p.greet()
+  
+}
+
+
+class Person(n: Int , name :String) {
+
+def greet(): Unit {
+println(" Hi I am Raghav")
+}
+
+}
+
+  
+  
 
