@@ -135,3 +135,22 @@ println(" Hi I am Raghav")
 # Scala does not have class level functionality ("static") 
 
 Scala do have object , objects do not receive parameter , scala object is a singleton instances and class and object can have same name.
+
+# Catching an Excpetion in Scala
+
+try {
+
+// Code that might fail at some point
+
+}
+
+catch {
+
+case e : RuntimeException => println("You got a run time exception")
+
+}
+
+finally {
+
+println("Final block executed")
+}
