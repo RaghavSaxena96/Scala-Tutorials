@@ -142,21 +142,21 @@ object MainExcept extends App {
 
   def getInt(withExcept : Boolean) : Int =
     {
-    if( withExcept )
-      throw new RuntimeException("No number")
+    if( withExcept ) </br>
+      throw new RuntimeException("No number") </br>
     else
-    42
+    42 </br>
   }
 
 
   try{
-    getInt(true)
+    getInt(true) </br>
   }
   catch {
     case e: RuntimeException => println("No number was inputed by the user1")
   }
   finally{
-    println("You are good!")
+    println("You are good!") </br>
   }
 
 }
