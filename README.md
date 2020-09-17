@@ -138,19 +138,25 @@ Scala do have object , objects do not receive parameter , scala object is a sing
 
 # Catching an Excpetion in Scala
 
-try {
+object MainExcept extends App {
 
-// Code that might fail at some point
+  def getInt(withExcept : Boolean) : Int =
+    {
+    if( withExcept )
+      throw new RuntimeException("No number")
+    else
+    42
+  }
 
-}
 
-catch {
+  try{
+    getInt(true)
+  }
+  catch {
+    case e: RuntimeException => println("No number was inputed by the user1")
+  }
+  finally{
+    println("You are good!")
+  }
 
-case e : RuntimeException => println("You got a run time exception")
-
-}
-
-finally {
-
-println("Final block executed")
 }
